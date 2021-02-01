@@ -119,5 +119,7 @@ def limit(iterator, n=None):
     :param n: The maximum number of values to produce.
     :yield: The first (at most) `n` values from the iterator.
     """
-    # TODO: Produce at most `n` values from the given iterator.
-    return iterator
+    for i, v in enumerate(iterator):
+        yield v
+        if i + 1 == n:
+            break
