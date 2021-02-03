@@ -29,7 +29,7 @@ def write_to_csv(results, filename):
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         for approach in results:
-            writer.writerow(approach.serialize() | approach.neo.serialize())
+            writer.writerow({**approach.serialize(), **approach.neo.serialize()})
 
 
 def write_to_json(results, filename):
