@@ -45,8 +45,8 @@ class NEODatabase:
         self._hm_neos = {neo.designation: neo for neo in self._neos}
         self._hm_neos_name = {neo.name: neo for neo in self._neos}
         for approach in self._approaches:
-            if (designation := approach._designation) in self._hm_neos:
-                neo = self._hm_neos[designation]
+            if approach._designation in self._hm_neos:
+                neo = self._hm_neos[approach._designation]
                 approach.neo = neo
                 neo.approaches.append(approach)
 

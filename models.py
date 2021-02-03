@@ -38,8 +38,8 @@ class NearEarthObject:
         :param info: A dictionary of excess keyword arguments supplied to the constructor.
         """
         self.designation = info['designation']
-        self.name = name if (name := info['name']) else None
-        self.diameter = float(dia if (dia := info['diameter']) else 'nan')
+        self.name = info['name'] if info['name'] else None
+        self.diameter = float(info['diameter'] if info['diameter'] else 'nan')
         self.hazardous = info['hazardous'] == 'Y'
         self.approaches = []
 
